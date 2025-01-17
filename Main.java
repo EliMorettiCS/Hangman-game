@@ -6,6 +6,7 @@ public class Main {
         Scanner myObj = new Scanner(System.in);
         System.out.println("Can You Please Give A Name? (0-20 Characters)");
         input = myObj.nextLine();
+        Settings Settings1 = new Settings();
         Player Player1 = new Player(input);
         System.out.println("Hello "+Player1.getName()+". Welcome to Hangman! We have a Story mode, and a Endless Mode. Which one would you like to play?");
         while (true) {
@@ -31,7 +32,20 @@ public class Main {
                     System.out.println("(4) Exit Settings");
                     input = myObj.nextLine();
                     if (input.equals("1")) {
-                        
+                        if (Settings1.getStyleSetting() == true) {
+                            System.out.println("Your Text Styling Is Currently Set To On. Turn it off? (y/n)");
+                            input = myObj.nextLine();
+                            if (input == "y") {
+                                Settings1.toggleStyleSetting();
+                            }
+                        }
+                        else {
+                            System.out.println("Your Text Styling Is Currently Set To Off. Turn it on? (y/n)");
+                            input = myObj.nextLine();
+                            if (input == "y") {
+                                Settings1.toggleStyleSetting();
+                            }
+                        }
                     }
                     if (input.equals("2")) {
                         
@@ -51,7 +65,6 @@ public class Main {
                 if (input == "y") {
                     System.exit(0);
                 }
-                else {}
             }
         }
     }

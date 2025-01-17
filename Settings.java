@@ -6,31 +6,32 @@ public class Settings
     // Constructers
     public Settings()
     {
-
+        this.style = style;
+        this.speech = speech;
     }
 
     // Accessors
     public boolean getStyleSetting() {
-        return style;
+        return this.style;
     }
     public boolean getSpeechSetting() {
-        return speech;
+        return this.speech;
     }
 
     public void toggleStyleSetting() {
-        if (style == true) {
-            style = false;
+        if (this.style == true) {
+            this.style = false;
         }
         else {
-            style = true;
+            this.style = true;
         }
     }
     public void toggleSpeechSetting() {
-        if (speech == true) {
-            speech = false;
+        if (this.speech == true) {
+            this.speech = false;
         }
         else {
-            speech = true;
+            this.speech = true;
         }
     }
     // Mutators
