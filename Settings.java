@@ -1,6 +1,3 @@
-import java.text.ListFormat;
-import java.util.Scanner;
-
 public class Settings
 {
     // Attributes
