@@ -14,18 +14,73 @@ public class Player {
         this.name = name;
     }
     // Accessors
-    public String getWLRatio(){
-        return wins/losses+"%";
+    public int getWins() {
+        return this.wins;
+    }
+    public int getLosses() {
+        return this.losses;
+    }
+    public double getWLRatio(){
+        return this.wins/this.losses;
     }
     public String getName() {
-        return name;
+        return this.name;
     }
-
+    public int getpronounsint() {
+        return this.pronouns;
+    }
+    public String getpronounsString() {
+        if (this.pronouns == 1) {
+            return "he/him";
+        }
+        if (this.pronouns == 2) {
+            return "she/her";
+        }
+        if (this.pronouns == 3) {
+            return "they/them";
+        }
+        else {
+            return "Man I have no idea";
+        }
+    }
+    public String getpronoun(int x) {
+        if (this.pronouns == 1) {
+            if (x == 1) {
+                return "he";
+            }
+            else {
+                return "him";
+            }        
+        }
+        if (this.pronouns == 2) {
+            if (x == 1) {
+                return "she";
+            }
+            else {
+                return "her";
+            }        
+        }
+        if (this.pronouns == 3) {
+            if (x == 1) {
+                return "they";
+            }
+            else {
+                return "them";
+            }        
+        }
+        else {
+            return "error";
+        }
+    }
     // Mutators
     public void addScore(int points) {
-        score += points;
+        this.score += points;
     }
     public void changeName(String i) {
-        name = i;
+        this.name = i;
+    }
+
+    public void changePronouns(int miku) {
+        this.pronouns = miku;
     }
 }
