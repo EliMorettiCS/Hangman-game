@@ -108,7 +108,7 @@ public class Main {
                             System.out.println("Okie Dokie Artichokie!");
                             System.out.println("You have"+Player1.getWins()+" Wins.");
                             System.out.println("You have"+Player1.getLosses()+" Losses.");
-                            System.out.println("You have a W/L Ratio Of"+Player1.getWLRatio()+".");
+                            System.out.println("You have a W/L Ratio Of "+Player1.getWLRatio()+"%.");
                         }
                     }
                     if (input.equals("4")) {
