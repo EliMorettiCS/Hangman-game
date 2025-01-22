@@ -23,7 +23,7 @@ public class Player {
         return this.losses;
     }
     public double getWLRatio(){
-        return this.wins/this.losses;
+        return Math.round(100 * this.wins / this.losses);
     }
     public String getName() {
         return this.name;

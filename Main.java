@@ -91,14 +91,17 @@ public class Main {
                             if (input.equals("1")) {
                                 Player1.changePronouns(1);
                                 System.out.println("You go! Slay King!");
+                                input = "";
                             }
                             if (input.equals("2")) {
                                 Player1.changePronouns(2);
                                 System.out.println("You go! Slay Queen!");
+                                input = "";
                             }
                             if (input.equals("3")) {
                                 Player1.changePronouns(3);
                                 System.out.println("You go! Slay!");
+                                input = "";
                             }
                             else {
                                 System.out.println("Sorry those are the only three we got. We outta stock");
@@ -109,6 +112,7 @@ public class Main {
                             System.out.println("You have"+Player1.getWins()+" Wins.");
                             System.out.println("You have"+Player1.getLosses()+" Losses.");
                             System.out.println("You have a W/L Ratio Of "+Player1.getWLRatio()+"%.");
+                            input = "";
                         }
                     }
                     if (input.equals("4")) {
@@ -120,9 +124,10 @@ public class Main {
             if (input.equals("4")) {
                 System.out.println("Are you sure you would like to exit? Progress will not be saved. (y/n)");
                 input = myObj.nextLine();
-                if (input == "y") {
+                if (input.equals("y")) {
                     System.exit(0);
                 }
+                input = "";
             }
         }
     }
