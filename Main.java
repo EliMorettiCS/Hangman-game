@@ -27,6 +27,7 @@ public class Main {
             }
             if (input.equals("2")) {
                 System.out.println("Starting Endless Mode...");
+                HangmanGame Game1 = new HangmanGame("");
             }
             if (input.equals("3")) {
                 System.out.println("Booting Up Settings...");
