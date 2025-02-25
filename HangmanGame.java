@@ -44,6 +44,7 @@ public class HangmanGame
                                 correctGuesses++;
                                 this.modifiedword = this.modifiedword.substring(0,this.modifiedword.indexOf(input))+this.modifiedword.substring(this.modifiedword.indexOf(input)+1);
                                 timesrun++;
+                                buildWord = buildWord.substring(0, modifiedword.indexOf(input))+input+buildWord.substring(modifiedword.indexOf(input)); //error here.
                             }
                             else {
                                 if (timesrun == 1) {
