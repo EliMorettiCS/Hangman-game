@@ -4,19 +4,19 @@ public class Main {
     public static void main(String[] args) {
         String input;
         Scanner myObj = new Scanner(System.in);
-        System.out.println("I planned on adding more features but deadlines got in the way so speech styling, style setting and story doesnt do anything. pronouns have a system in place but arent actually implemented");
+        System.out.println("I planned on adding more features but deadlines got in the way so speech styling, style setting and story doesnt do anything. pronouns have a system in place but arent actually implemented. PS: type: APCSA2025 into main menu to turn on/off dev mode");
         System.out.println("Can You Please Give A Name? (0-20 Characters)");
         input = myObj.nextLine();
         Settings Settings1 = new Settings();
-        Player Player1 = new Player(input);
+        Player player1 = new Player(input);
         System.out.println("Yo im gonna need some pronouns also");
         System.out.println("(1) he/him");
         System.out.println("(2) she/her");
         System.out.println("(3) they/them");
         input = myObj.nextLine();
-        Player1.changePronouns(Integer.parseInt(input));
+        player1.changePronouns(Integer.parseInt(input));
         input = "";
-        System.out.println("Hello "+Player1.getName()+". Welcome to Hangman! We have a Story mode, and a Endless Mode. Which one would you like to play?");
+        System.out.println("Hello "+player1.getName()+". Welcome to Hangman! We have a Story mode, and a Endless Mode. Which one would you like to play?");
         while (true) {
             System.out.println("(1) Story Mode");
             System.out.println("(2) Endless Mode");
@@ -28,12 +28,12 @@ public class Main {
             }
             if (input.equals("2")) {
                 System.out.println("Starting Endless Mode...");
-                HangmanGame Game1 = new HangmanGame();
+                HangmanGame Game1 = new HangmanGame(player1);
                 if (Game1.startGame("") == true) {
-                    Player1.addWin();
+                    player1.addWin();
                 }
                 else {
-                    Player1.addLoss();
+                    player1.addLoss();
                 }
                 
             }
@@ -86,29 +86,29 @@ public class Main {
                         System.out.println("(3) I would like to check my wins/losses");
                         input = myObj.nextLine();
                         if (input.equals("1")) {
-                            System.out.println("Your Current Name is "+Player1.getName()+". What would you like to change it to?");
+                            System.out.println("Your Current Name is "+player1.getName()+". What would you like to change it to?");
                             input = myObj.nextLine();
-                            Player1.changeName(input);
+                            player1.changeName(input);
                         }
                         if (input.equals("2")) {
-                            System.out.println("Your Current Pronouns are "+Player1.getpronounsString()+". What would you like to change it to?");
+                            System.out.println("Your Current Pronouns are "+player1.getpronounsString()+". What would you like to change it to?");
                             System.out.println("(1) he/him");
                             System.out.println("(2) she/her");
                             System.out.println("(3) they/them");
                             input = myObj.nextLine();
-                            Player1.changeName(input);
+                            player1.changeName(input);
                             if (input.equals("1")) {
-                                Player1.changePronouns(1);
+                                player1.changePronouns(1);
                                 System.out.println("You go! Slay King!");
                                 input = "";
                             }
                             if (input.equals("2")) {
-                                Player1.changePronouns(2);
+                                player1.changePronouns(2);
                                 System.out.println("You go! Slay Queen!");
                                 input = "";
                             }
                             if (input.equals("3")) {
-                                Player1.changePronouns(3);
+                                player1.changePronouns(3);
                                 System.out.println("You go! Slay!");
                                 input = "";
                             }
@@ -118,9 +118,9 @@ public class Main {
                         }
                         if (input.equals("3")) {
                             System.out.println("Okie Dokie Artichokie!");
-                            System.out.println("You have"+Player1.getWins()+" Wins.");
-                            System.out.println("You have"+Player1.getLosses()+" Losses.");
-                            System.out.println("You have a W/L Ratio Of "+Player1.getWLRatio()+"%.");
+                            System.out.println("You have"+player1.getWins()+" Wins.");
+                            System.out.println("You have"+player1.getLosses()+" Losses.");
+                            System.out.println("You have a W/L Ratio Of "+player1.getWLRatio()+"%.");
                             input = "";
                         }
                     }
@@ -139,8 +139,14 @@ public class Main {
                 input = "";
             }
             if (input.equals("APCSA2025")) {
-                System.out.println("Developer Mode Activated");
-                Player1.toggleDevMode();
+                player1.toggleDevMode();
+                if (player1.getDevMode()) {
+                    System.out.println("Developer Mode Activated");
+
+                }
+                else {
+                    System.out.println("Developer Mode Deactivated");
+                }
             }
         }
     }

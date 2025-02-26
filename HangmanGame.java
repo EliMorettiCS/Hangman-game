@@ -10,9 +10,11 @@ public class HangmanGame
     int correctGuesses;
     String pickedLetters = "{::}";
     String input;
-    String buildWord = "_";;
+    String buildWord = "_";
+    Player player;
     // Constructers
-    public HangmanGame() {
+    public HangmanGame(Player player) {
+        this.player = player;
     }
     public boolean startGame(String customWord) {
         if (customWord.equals("")) { // Made for endless mode.
@@ -34,6 +36,11 @@ public class HangmanGame
         while (wrongGuesses <= 5) {
             System.out.println(buildWord);
             System.out.println("Picked Letters:"+pickedLetters);
+            /* if (player.getDevMode()) {
+                System.out.println("Word: "+word);
+                System.out.println("Modified Word: "+modifiedword);
+            }
+                I have no idea why this code isnt working. if you can figre it out (you probably can then dev mode will work for you.)*/
             input = myObj.nextLine();
             input = input.toUpperCase();
             if (input.length() == 1) {
