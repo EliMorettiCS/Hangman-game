@@ -31,14 +31,14 @@ public class HangmanGame
         word = word.toUpperCase();
         modifiedword = word;
         System.out.println("Alright, Pick a letter from your keyboard to guess."); // Game Start
-        while (wrongGuesses <= 6) {
+        while (wrongGuesses <= 5) {
             System.out.println(buildWord);
-            System.out.println(pickedLetters);
+            System.out.println("Picked Letters:"+pickedLetters);
             input = myObj.nextLine();
             input = input.toUpperCase();
             if (input.length() == 1) {
                 if (pickedLetters.indexOf(input) == -1) {
-                    pickedLetters += input;
+                    pickedLetters = pickedLetters.substring(0,pickedLetters.length()-2)+input+" "+pickedLetters.substring(pickedLetters.length()-2,pickedLetters.length());
                     if (modifiedword.indexOf(input) != -1) {
                         int timesrun = 0;
                         for (int i = 0; i != 1;) {
@@ -49,7 +49,6 @@ public class HangmanGame
                                 timesrun++;                           
                             }
                             else {
-                                //pickedLetters += pickedLetters.substring(0, pickedLetters.length()-2)+input+pickedLetters.substring(pickedLetters.length()-2); //Continue Here!
                                 if (timesrun == 1) {
                                     System.out.println("Correct! There was "+input+" in that word "+timesrun+" time!");
                                 }
@@ -68,9 +67,12 @@ public class HangmanGame
                             }
                         }
                     }
-                    else {
+                    else if (wrongGuesses != 5){
                         wrongGuesses++;
                         System.out.println("Wrong Guess! You have "+(6-wrongGuesses)+" Guesses left");
+                    }
+                    else {
+                        wrongGuesses++;
                     }
                 }
                 else {
