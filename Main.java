@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         String input;
         Scanner myObj = new Scanner(System.in);
+        System.out.println("I planned on adding more features but deadlines got in the way so speech styling, style setting and story doesnt do anything. pronouns have a system in place but arent actually implemented");
         System.out.println("Can You Please Give A Name? (0-20 Characters)");
         input = myObj.nextLine();
         Settings Settings1 = new Settings();
@@ -27,7 +28,14 @@ public class Main {
             }
             if (input.equals("2")) {
                 System.out.println("Starting Endless Mode...");
-                HangmanGame Game1 = new HangmanGame("");
+                HangmanGame Game1 = new HangmanGame();
+                if (Game1.startGame("") == true) {
+                    Player1.addWin();
+                }
+                else {
+                    Player1.addLoss();
+                }
+                
             }
             if (input.equals("3")) {
                 System.out.println("Booting Up Settings...");

@@ -12,8 +12,8 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
-        this.wins = 2;
-        this.losses = 3;
+        this.wins = 0;
+        this.losses = 0;
     }
     // Accessors
     public int getWins() {
@@ -84,5 +84,15 @@ public class Player {
 
     public void changePronouns(int miku) {
         this.pronouns = miku;
+    }
+
+    public String addStyling(String text) {
+        return ("{: "+text+":}");
+    }
+    public void addWin() {
+        this.wins++;
+    }
+    public void addLoss() {
+        this.losses++;
     }
 }
