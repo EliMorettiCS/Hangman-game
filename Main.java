@@ -138,6 +138,10 @@ public class Main {
                 }
                 input = "";
             }
+            if (input.equals("APCSA2025")) {
+                System.out.println("Developer Mode Activated");
+                Player1.toggleDevMode();
+            }
         }
     }
 }

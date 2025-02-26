@@ -8,6 +8,7 @@ public class Player {
     private int wins; // count of every win the player has collected.
     private int losses; // count of every
     private int rounds; // amount of rounds played
+    private boolean devMode = false;
     // Constructers
 
     public Player(String name) {
@@ -73,7 +74,17 @@ public class Player {
         else {
             return "error";
         }
+
+        
     }
+    public boolean getDevMode() {
+            if (devMode = true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
     // Mutators
     public void addScore(int points) {
         this.score += points;
@@ -95,4 +106,14 @@ public class Player {
     public void addLoss() {
         this.losses++;
     }
+
+    public void toggleDevMode() {
+        if (devMode == true ) {
+            devMode = false;
+        }
+        else if (devMode == false ) {
+            devMode = true;
+        }
+    }
+
 }
